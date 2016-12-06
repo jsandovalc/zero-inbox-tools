@@ -16,7 +16,6 @@ messages = server.gmail_search(['NOT', 'DELETED'])
 response = server.fetch(messages, ['RFC822'])
 
 for msgid, data in response.items():
-    print('data is', list(data.keys()))
     msg_string = data[b'RFC822']
     msg = email.message_from_string(msg_string.decode('utf-8'))
     print(msgid, msg['From'], msg['date'])

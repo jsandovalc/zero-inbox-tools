@@ -31,8 +31,14 @@ Major mode for displaying the mails in inbox."
     )
   "Keymap for `zero-inbox-moden'.")
 
+(defun zero-inbox-load ()
+  "Executes python process and displays mails."
+  (unless (eq major-mode 'zero-inbox-mode)
+    (zero-inbox-mode)))
+
 (defun zero-inbox ()
-  "Run zero inbox and display"
-    )
+  "Run zero inbox and display."
+  (interactive)
+  (zero-inbox-load))
 
 ;;; zero-inbox.el ends here

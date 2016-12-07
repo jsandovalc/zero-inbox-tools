@@ -6,6 +6,12 @@
 
 ;;; Code:
 
+(require 'derived)
+
+(define-derived-mode zero-inbox-mode special-mode "Zero inbox
+Major mode for displaying the mails in inbox."
+  (provide 'zero-inbox))
+
 (defvar zero-inbox-mode-hook nil
   "*List of functions to call when entering zero-inbox-mode*.")
 
@@ -25,16 +31,8 @@
     )
   "Keymap for `zero-inbox-moden'.")
 
-(defun zero-inbox-mode ()
-  "Mode for displaying new entries in zero-inbox."
-  (interactive)
-  (kill-all-local-variables)
-  (use-local-map zero-inbox-mode-map)
-  (setq major-mode 'zero-inbox-mode
-        mode-name "zero-inbox"
-        buffer-read-only t)
-  (buffer-disable-undo)
-  (run-hooks 'zero-inbox-mode-hook)
-  (provide 'zero-inbox)
-  )
+(defun zero-inbox ()
+  "Run zero inbox and display"
+    )
+
 ;;; zero-inbox.el ends here
